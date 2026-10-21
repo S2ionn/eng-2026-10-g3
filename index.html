@@ -137,6 +137,30 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 #ui button{background:#33415a;color:#fff;border:0;border-radius:6px;padding:6px 14px;font-size:14px;cursor:pointer}
 #bar{position:fixed;left:0;top:0;height:4px;background:var(--accent);transition:width .2s}
 .slide:not(.sol)>.choices.one{font-size:24px;gap:12px;margin-top:8px}
+@media print{
+  html,body{overflow:visible;height:auto;background:#fff}
+  #stage{position:static;transform:none!important;width:1280px;height:auto}
+  .slide{display:flex!important;position:relative;width:1280px;height:720px;break-after:page;border-radius:0}
+  #ui,#bar,.tbtn,.trans{display:none!important}
+  @page{size:1280px 720px;margin:0}
+}
+.tfull{flex:1 1 0;min-height:0;overflow:hidden;font-size:22px;line-height:1.8;word-break:keep-all;background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:18px 26px}
+.tfull p{margin-bottom:10px}
+.tfull.two{column-count:2;column-gap:36px;column-rule:1px solid var(--line)}
+/* 구조 정리: 상자는 내용만큼만, 정답은 해설 오른쪽 맨 위 */
+.passage,.tfull{flex:0 1 auto}
+.sgrid{flex:0 1 auto;grid-template-rows:minmax(0,1fr);align-items:start}
+.sgrid>*{max-height:100%}
+.choices.rc{align-self:start}
+.choices.row5,.choices:not(.one):not(.row5){margin-top:14px}
+.given{margin-bottom:12px}
+.cols{align-items:start}
+.cols>.steps{max-height:100%}
+.side{max-height:100%}
+.side .card.ans{order:-1;margin-top:0;padding:10px 16px}
+.lcols .side .card.ans{order:0;margin-top:auto}
+.card.ans .a{font-size:28px}
+.cols{grid-template-rows:minmax(0,1fr)}
 
 </style>
 </head>
@@ -150,7 +174,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum"><span class="z">0</span>1</span><span class="tag">듣기</span><span class="tag lite">목적 파악</span></div>
-  <div class="inst">1. 다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오.</div>
+  <div class="inst">다음을 듣고, 남자가 하는 말의 목적으로 가장 적절한 것을 고르시오.</div>
   <div class="player"><span class="pl">♪ 1번 듣기</span><audio controls preload="metadata" src="audio/q01.mp3"></audio></div>
   
   <div class="choices one"><div class="c"><b>①</b><span>교실 환기 시 유의 사항을 전달하려고</span></div><div class="c"><b>②</b><span>학교 외벽 청소 일정 변경을 공지하려고</span></div><div class="c"><b>③</b><span>하교 시 교실 창문을 닫을 것을 당부하려고</span></div><div class="c"><b>④</b><span>교실 창문 교체로 인한 출입 제한을 안내하려고</span></div><div class="c"><b>⑤</b><span>교내 배관 문제로 인해 물 사용 자제를 요청하려고</span></div></div>
@@ -170,7 +194,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum"><span class="z">0</span>2</span><span class="tag">듣기</span><span class="tag lite">의견 파악</span></div>
-  <div class="inst">2. 대화를 듣고, 여자의 의견으로 가장 적절한 것을 고르시오.</div>
+  <div class="inst">대화를 듣고, 여자의 의견으로 가장 적절한 것을 고르시오.</div>
   <div class="player"><span class="pl">♪ 2번 듣기</span><audio controls preload="metadata" src="audio/q02.mp3"></audio></div>
   
   <div class="choices one"><div class="c"><b>①</b><span>배운 것을 보지 않고 백지에 적어 보는 것은 복습에 효과적이다.</span></div><div class="c"><b>②</b><span>수업 중에 필기한 내용을 교과서를 활용하여 보완해야 한다.</span></div><div class="c"><b>③</b><span>유명한 학습법이 모든 학습자에게 효과적인 것은 아니다.</span></div><div class="c"><b>④</b><span>학습한 내용을 더 오래 기억하려면 당일에 복습해야 한다.</span></div><div class="c"><b>⑤</b><span>이해하기 어려운 과목은 친구들과 함께 복습하면 도움이 된다.</span></div></div>
@@ -190,7 +214,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum"><span class="z">0</span>3</span><span class="tag">듣기</span><span class="tag lite">요지 파악</span></div>
-  <div class="inst">3. 다음을 듣고, 남자가 하는 말의 요지로 가장 적절한 것을 고르시오.</div>
+  <div class="inst">다음을 듣고, 남자가 하는 말의 요지로 가장 적절한 것을 고르시오.</div>
   <div class="player"><span class="pl">♪ 3번 듣기</span><audio controls preload="metadata" src="audio/q03.mp3"></audio></div>
   
   <div class="choices one"><div class="c"><b>①</b><span>상쾌한 아침을 위해 일정한 수면 시간을 유지하는 것이 좋다.</span></div><div class="c"><b>②</b><span>취침 전 스마트폰 사용은 수면의 질을 떨어뜨릴 수 있다.</span></div><div class="c"><b>③</b><span>아침 운동은 하루의 집중력을 높이는 데 효과적이다.</span></div><div class="c"><b>④</b><span>스마트폰의 알람 기능은 효율적인 시간 관리에 도움을 준다.</span></div><div class="c"><b>⑤</b><span>기상 알람으로 스마트폰보다 실제 시계를 사용하는 것이 좋다.</span></div></div>
@@ -210,7 +234,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum"><span class="z">0</span>4</span><span class="tag">듣기</span><span class="tag lite">그림 불일치</span></div>
-  <div class="inst">4. 대화를 듣고, 그림에서 대화의 내용과 일치하지 않는 것을 고르시오.</div>
+  <div class="inst">대화를 듣고, 그림에서 대화의 내용과 일치하지 않는 것을 고르시오.</div>
   <div class="player"><span class="pl">♪ 4번 듣기</span><audio controls preload="metadata" src="audio/q04.mp3"></audio></div>
   <div class="pic"><img src="img/q04.png" alt="4번 그림"></div>
   
@@ -230,7 +254,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum"><span class="z">0</span>5</span><span class="tag">듣기</span><span class="tag lite">할 일</span></div>
-  <div class="inst">5. 대화를 듣고, 여자가 할 일로 가장 적절한 것을 고르시오.</div>
+  <div class="inst">대화를 듣고, 여자가 할 일로 가장 적절한 것을 고르시오.</div>
   <div class="player"><span class="pl">♪ 5번 듣기</span><audio controls preload="metadata" src="audio/q05.mp3"></audio></div>
   
   <div class="choices one"><div class="c"><b>①</b><span>초대장 보내기</span></div><div class="c"><b>②</b><span>전구 교체하기</span></div><div class="c"><b>③</b><span>방명록 준비하기</span></div><div class="c"><b>④</b><span>포스터 게시하기</span></div><div class="c"><b>⑤</b><span>방문객 선물 포장하기</span></div></div>
@@ -250,7 +274,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum"><span class="z">0</span>6</span><span class="tag">듣기</span><span class="tag lite">금액 계산</span><span class="tag pt">3점</span></div>
-  <div class="inst">6. 대화를 듣고, 남자가 지불할 금액을 고르시오.</div>
+  <div class="inst">대화를 듣고, 남자가 지불할 금액을 고르시오.</div>
   <div class="player"><span class="pl">♪ 6번 듣기</span><audio controls preload="metadata" src="audio/q06.mp3"></audio></div>
   
   <div class="choices row5 one"><div class="c"><b>①</b><span>$17</span></div><div class="c"><b>②</b><span>$27</span></div><div class="c"><b>③</b><span>$30</span></div><div class="c"><b>④</b><span>$37</span></div><div class="c"><b>⑤</b><span>$40</span></div></div>
@@ -270,7 +294,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum"><span class="z">0</span>7</span><span class="tag">듣기</span><span class="tag lite">이유</span></div>
-  <div class="inst">7. 대화를 듣고, 여자가 봉사 활동을 하러 갈 수 없는 이유를 고르시오.</div>
+  <div class="inst">대화를 듣고, 여자가 봉사 활동을 하러 갈 수 없는 이유를 고르시오.</div>
   <div class="player"><span class="pl">♪ 7번 듣기</span><audio controls preload="metadata" src="audio/q07.mp3"></audio></div>
   
   <div class="choices one"><div class="c"><b>①</b><span>가족 여행을 가야 해서</span></div><div class="c"><b>②</b><span>역사 발표 준비를 해야 해서</span></div><div class="c"><b>③</b><span>생일 선물을 사러 가야 해서</span></div><div class="c"><b>④</b><span>모집 공고를 확인하지 못해서</span></div><div class="c"><b>⑤</b><span>반려견을 동물병원에 데려가야 해서</span></div></div>
@@ -290,7 +314,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum"><span class="z">0</span>8</span><span class="tag">듣기</span><span class="tag lite">언급 X</span></div>
-  <div class="inst">8. 대화를 듣고, Quote &amp; Reflection Club에 관해 언급되지 않은 것을 고르시오.</div>
+  <div class="inst">대화를 듣고, Quote &amp; Reflection Club에 관해 언급되지 않은 것을 고르시오.</div>
   <div class="player"><span class="pl">♪ 8번 듣기</span><audio controls preload="metadata" src="audio/q08.mp3"></audio></div>
   
   <div class="choices one"><div class="c"><b>①</b><span>활동 내용</span></div><div class="c"><b>②</b><span>담당 교사</span></div><div class="c"><b>③</b><span>모임 장소</span></div><div class="c"><b>④</b><span>모집 인원</span></div><div class="c"><b>⑤</b><span>신청 방법</span></div></div>
@@ -310,7 +334,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum"><span class="z">0</span>9</span><span class="tag">듣기</span><span class="tag lite">내용 불일치</span></div>
-  <div class="inst">9. Starlight Festival에 관한 다음 내용을 듣고, 일치하지 않는 것을 고르시오.</div>
+  <div class="inst">Starlight Festival에 관한 다음 내용을 듣고, 일치하지 않는 것을 고르시오.</div>
   <div class="player"><span class="pl">♪ 9번 듣기</span><audio controls preload="metadata" src="audio/q09.mp3"></audio></div>
   
   <div class="choices one"><div class="c"><b>①</b><span>Big Island에서 매년 개최된다.</span></div><div class="c"><b>②</b><span>3일 동안 진행된다.</span></div><div class="c"><b>③</b><span>30개가 넘는 단체가 참여한다.</span></div><div class="c"><b>④</b><span>모든 방문객은 과학 활동 소책자를 받는다.</span></div><div class="c"><b>⑤</b><span>사전 예약이 필요하다.</span></div></div>
@@ -330,7 +354,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">10</span><span class="tag">듣기</span><span class="tag lite">도표 선택</span></div>
-  <div class="inst">10. 다음 표를 보면서 대화를 듣고, 두 사람이 구입할 캣 타워를 고르시오.</div>
+  <div class="inst">다음 표를 보면서 대화를 듣고, 두 사람이 구입할 캣 타워를 고르시오.</div>
   <div class="player"><span class="pl">♪ 10번 듣기</span><audio controls preload="metadata" src="audio/q10.mp3"></audio></div>
   <div class="tblwrap"><table class="dt"><tr><th></th><th>Model</th><th>Price</th><th>Number of Levels</th><th>Material</th><th>Hammock</th></tr>
 <tr><td>①</td><td>A</td><td>$105</td><td>3</td><td>Cardboard</td><td>×</td></tr>
@@ -355,7 +379,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">11</span><span class="tag">듣기</span><span class="tag lite">짧은 응답</span><span class="tag pt">3점</span></div>
-  <div class="inst">11. 대화를 듣고, 남자의 마지막 말에 대한 여자의 응답으로 가장 적절한 것을 고르시오.</div>
+  <div class="inst">대화를 듣고, 남자의 마지막 말에 대한 여자의 응답으로 가장 적절한 것을 고르시오.</div>
   <div class="player"><span class="pl">♪ 11번 듣기</span><audio controls preload="metadata" src="audio/q11.mp3"></audio></div>
   
   <div class="choices one"><div class="c"><b>①</b><span>It went well. The food we prepared was all sold out.</span></div><div class="c"><b>②</b><span>Our booth has a big blue banner. You can’t miss it.</span></div><div class="c"><b>③</b><span>I know. But the food booth doesn’t need any help.</span></div><div class="c"><b>④</b><span>That’s easy. I’ll help you with the booth decorations.</span></div><div class="c"><b>⑤</b><span>I’m glad you can come. Just avoid coming on Saturday.</span></div></div>
@@ -375,7 +399,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">12</span><span class="tag">듣기</span><span class="tag lite">짧은 응답</span></div>
-  <div class="inst">12. 대화를 듣고, 여자의 마지막 말에 대한 남자의 응답으로 가장 적절한 것을 고르시오.</div>
+  <div class="inst">대화를 듣고, 여자의 마지막 말에 대한 남자의 응답으로 가장 적절한 것을 고르시오.</div>
   <div class="player"><span class="pl">♪ 12번 듣기</span><audio controls preload="metadata" src="audio/q12.mp3"></audio></div>
   
   <div class="choices one"><div class="c"><b>①</b><span>Of course. I already watched it last week.</span></div><div class="c"><b>②</b><span>Not yet. The movie will be released this weekend.</span></div><div class="c"><b>③</b><span>Really? Then I’d better check if there’s a seat available.</span></div><div class="c"><b>④</b><span>You’re right. The ticket price is not at all reasonable.</span></div><div class="c"><b>⑤</b><span>Not so nice. I should’ve checked the movie review.</span></div></div>
@@ -395,7 +419,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">13</span><span class="tag">듣기</span><span class="tag lite">긴 응답</span></div>
-  <div class="inst">13. 대화를 듣고, 남자의 마지막 말에 대한 여자의 응답으로 가장 적절한 것을 고르시오.</div>
+  <div class="inst">대화를 듣고, 남자의 마지막 말에 대한 여자의 응답으로 가장 적절한 것을 고르시오.</div>
   <div class="player"><span class="pl">♪ 13번 듣기</span><audio controls preload="metadata" src="audio/q13.mp3"></audio></div>
   
   <div class="choices one"><div class="c"><b>①</b><span>Sure. I’ll make a poster about the bicycle parking issue.</span></div><div class="c"><b>②</b><span>Never mind. I’ve already found the parking zone.</span></div><div class="c"><b>③</b><span>Well, this is my first time making a poster.</span></div><div class="c"><b>④</b><span>That’s okay. I’ll show you how to ride a bicycle.</span></div><div class="c"><b>⑤</b><span>I agree. Let’s hang up the completed posters first.</span></div></div>
@@ -415,7 +439,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">14</span><span class="tag">듣기</span><span class="tag lite">긴 응답</span><span class="tag pt">3점</span></div>
-  <div class="inst">14. 대화를 듣고, 여자의 마지막 말에 대한 남자의 응답으로 가장 적절한 것을 고르시오.</div>
+  <div class="inst">대화를 듣고, 여자의 마지막 말에 대한 남자의 응답으로 가장 적절한 것을 고르시오.</div>
   <div class="player"><span class="pl">♪ 14번 듣기</span><audio controls preload="metadata" src="audio/q14.mp3"></audio></div>
   
   <div class="choices one"><div class="c"><b>①</b><span>That’s a relief. I’m glad the slides were clear enough.</span></div><div class="c"><b>②</b><span>I’m sorry. I’ll make sure it doesn’t happen again.</span></div><div class="c"><b>③</b><span>Don’t worry. I’ve already connected my laptop.</span></div><div class="c"><b>④</b><span>My goodness. I forgot to reply to your message.</span></div><div class="c"><b>⑤</b><span>Good idea. Let’s open a chat room to fix the schedule.</span></div></div>
@@ -435,7 +459,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">15</span><span class="tag">듣기</span><span class="tag lite">상황 응답</span></div>
-  <div class="inst">15. 다음 상황 설명을 듣고, Emma가 Sophia에게 할 말로 가장 적절한 것을 고르시오.</div>
+  <div class="inst">다음 상황 설명을 듣고, Emma가 Sophia에게 할 말로 가장 적절한 것을 고르시오.</div>
   <div class="player"><span class="pl">♪ 15번 듣기</span><audio controls preload="metadata" src="audio/q15.mp3"></audio></div>
   
   <div class="choices one"><div class="c"><b>①</b><span>How about traveling separately for a few hours a day?</span></div><div class="c"><b>②</b><span>We should book the museum program in advance.</span></div><div class="c"><b>③</b><span>Why don’t we start our trip a few days earlier?</span></div><div class="c"><b>④</b><span>We can skip all the landmarks and go shopping together.</span></div><div class="c"><b>⑤</b><span>Let’s check out the places that you recommended before.</span></div></div>
@@ -455,7 +479,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">16</span><span class="tag">듣기</span><span class="tag lite">주제</span></div>
-  <div class="inst">[16~17] 다음을 듣고, 물음에 답하시오.<br>16. 여자가 하는 말의 주제로 가장 적절한 것은?</div>
+  <div class="inst">[16~17] 다음을 듣고, 물음에 답하시오.<br>여자가 하는 말의 주제로 가장 적절한 것은?</div>
   <div class="player"><span class="pl">♪ 16~17번 듣기 (두 번 들려줘요)</span><audio controls preload="metadata" src="audio/q16-17.mp3"></audio></div>
   
   <div class="choices one"><div class="c"><b>①</b><span>examples of universal design applied in clothing</span></div><div class="c"><b>②</b><span>parts of clothing that were invented by accident</span></div><div class="c"><b>③</b><span>clothing designs universally preferred by designers</span></div><div class="c"><b>④</b><span>unique parts of traditional clothing in different cultures</span></div><div class="c"><b>⑤</b><span>universal design features that are falling out of use today</span></div></div>
@@ -475,7 +499,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">17</span><span class="tag">듣기</span><span class="tag lite">언급 X</span></div>
-  <div class="inst">[16~17] 다음을 듣고, 물음에 답하시오.<br>17. 언급된 요소가 아닌 것은?</div>
+  <div class="inst">[16~17] 다음을 듣고, 물음에 답하시오.<br>언급된 요소가 아닌 것은?</div>
   <div class="player"><span class="pl">♪ 16~17번 듣기 (두 번 들려줘요)</span><audio controls preload="metadata" src="audio/q16-17.mp3"></audio></div>
   
   <div class="choices row5 one"><div class="c"><b>①</b><span>buttons</span></div><div class="c"><b>②</b><span>waistbands</span></div><div class="c"><b>③</b><span>zippers</span></div><div class="c"><b>④</b><span>pockets</span></div><div class="c"><b>⑤</b><span>labels</span></div></div>
@@ -495,7 +519,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">18</span><span class="tag">독해</span><span class="tag lite">글의 목적</span></div>
-  <div class="inst">18. 다음 글의 목적으로 가장 적절한 것은?</div>
+  <div class="inst">다음 글의 목적으로 가장 적절한 것은?</div>
   <div class="sgrid"><div class="passage fit">Thank you for always ordering pies from our bakery for your special occasions. We truly appreciate your continued support and always try to provide pies of the highest quality. Unfortunately, we are writing to inform you that we are unable to prepare the apple pie you’ve ordered for the upcoming birthday celebration. Due to a delayed apple harvest this season, we are currently experiencing difficulties sourcing fresh apples. As a result, we are unable to fulfill the order that you’ve requested. We sincerely apologize for this situation. We appreciate your understanding and look forward to serving you again in the future.</div><div class="choices one rc fit"><div class="c"><b>①</b><span>사과파이 주문 방법을 공지하려고</span></div><div class="c"><b>②</b><span>사과파이 특별 할인 행사를 홍보하려고</span></div><div class="c"><b>③</b><span>주문 취소에 따른 환불 절차를 설명하려고</span></div><div class="c"><b>④</b><span>주문 변경에 따른 추가 요금을 안내하려고</span></div><div class="c"><b>⑤</b><span>주문한 사과파이를 제공할 수 없음을 알리려고</span></div></div></div>
 </section>
 <section class="slide sol">
@@ -511,7 +535,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">19</span><span class="tag">독해</span><span class="tag lite">심경 변화</span></div>
-  <div class="inst">19. 다음 글에 드러난 Dan의 심경 변화로 가장 적절한 것은?</div>
+  <div class="inst">다음 글에 드러난 Dan의 심경 변화로 가장 적절한 것은?</div>
   <div class="sgrid"><div class="passage fit">The night had finally arrived. It was the night to take a photo of the Milky Way. Dan had been checking the weather and searching for the perfect location. As he drove to the spot, he couldn’t stop smiling and his heart raced with anticipation. However, when he arrived, dark clouds began to cover the sky. Within minutes, every star disappeared behind the thick clouds. Dan waited for over an hour, checking his weather app constantly. Even worse, it started to rain. He lowered his head, letting out a loud sigh. He could do nothing but drive back home, downhearted.</div><div class="choices one rc fit"><div class="c"><b>①</b><span>excited → disappointed</span></div><div class="c"><b>②</b><span>anxious → relieved</span></div><div class="c"><b>③</b><span>terrified → indifferent</span></div><div class="c"><b>④</b><span>bored → delighted</span></div><div class="c"><b>⑤</b><span>relaxed → grateful</span></div></div></div>
 </section>
 <section class="slide sol">
@@ -527,7 +551,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">20</span><span class="tag">독해</span><span class="tag lite">필자의 주장</span></div>
-  <div class="inst">20. 다음 글에서 필자가 주장하는 바로 가장 적절한 것은?</div>
+  <div class="inst">다음 글에서 필자가 주장하는 바로 가장 적절한 것은?</div>
   <div class="sgrid wch"><div class="passage fit">Did you know that shadows are the color of the sky? That counterintuitive reality reminds us that preconceived notions, bias, and prejudice color our view of the world. One profound habit of thinking individuals is to first acknowledge their biases and then intentionally overcome them. Asking challenging questions can help. Passionately argue an issue from the opposite point of view, and ask probing and difficult questions that challenge your original stance. Be brutally honest and see what’s actually there rather than what’s expected. Get in the habit of asking, “Do I really <i>know</i>?” and refuse to accept assertions blindly. Challenge everything and everyone — including your teachers. Don’t be intimidated. You are the best authority on what you don’t understand — trust yourself: don’t be afraid to ask the questions you need to ask, and be brave enough to change your thinking when you uncover a blind spot.<div class="foot">* counterintuitive: 반(反)직관적인 ** probing: 속을 캐 보는 *** stance: 입장</div></div><div class="choices one rc fit"><div class="c"><b>①</b><span>논쟁을 할 때 상대방의 입장에서 생각하는 습관을 들여야 한다.</span></div><div class="c"><b>②</b><span>자신의 기존 생각에 안주하지 말고 끊임없이 질문해야 한다.</span></div><div class="c"><b>③</b><span>지식의 오류를 줄이기 위해 권위자의 의견을 존중해야 한다.</span></div><div class="c"><b>④</b><span>타인의 비판에 위축되지 말고 자신의 직관을 믿어야 한다.</span></div><div class="c"><b>⑤</b><span>편향을 극복하기 위해서는 객관적인 통계 자료를 확인해야 한다.</span></div></div></div>
 </section>
 <section class="slide sol">
@@ -543,7 +567,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">21</span><span class="tag">독해</span><span class="tag lite">함축 의미</span><span class="tag pt">3점</span></div>
-  <div class="inst">21. 밑줄 친 “develops the photograph” of the original text가 다음 글에서 의미하는 바로 가장 적절한 것은?</div>
+  <div class="inst">밑줄 친 “develops the photograph” of the original text가 다음 글에서 의미하는 바로 가장 적절한 것은?</div>
   <div class="sgrid wch"><div class="passage fit">All the philosophical dilemmas about whether translation “reflects” or instead “transforms” what’s in the original need to be swept aside. This is exactly the dichotomy that Merleau-Ponty’s account of perception is trying to free us from: are we “seeing” objects or “constituting” them? Neither, because we perceive things in a world we live in and have the power to transform: a chair is something we can go sit in; a mug is something we can pick up. One of Merleau-Ponty’s many great metaphors is that perception neither finds the world nor creates it: it reveals it, which he expresses using the term <i>révélateur</i>, the developing fluid for photographs in a darkroom. The act of seeing develops what’s in the world, like developing a photograph. Likewise, a translation <u>“develops the photograph” of the original text</u>. Translators don’t simply “recognize” what’s there, but nor are we “changing” it into anything it isn’t already, though we can be more or less aggressively interventionist in our darkroom. As a translator I take up the affordances of the original, moving through its world and constantly invited to respond in certain ways.<div class="foot">* dichotomy: 이분법 ** affordance: 행위유발성</div></div><div class="choices one rc fit"><div class="c"><b>①</b><span>brings into view what already exists without inventing anything new</span></div><div class="c"><b>②</b><span>invents ideologically driven values that are not grounded in the original</span></div><div class="c"><b>③</b><span>provides detailed background information of the original text to enhance reader comprehension</span></div><div class="c"><b>④</b><span>introduces a completely new interpretation that appeals to the target readers</span></div><div class="c"><b>⑤</b><span>exploits a work of art in order to convey the translator’s perspectives</span></div></div></div>
 </section>
 <section class="slide sol">
@@ -559,7 +583,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">22</span><span class="tag">독해</span><span class="tag lite">글의 요지</span></div>
-  <div class="inst">22. 다음 글의 요지로 가장 적절한 것은?</div>
+  <div class="inst">다음 글의 요지로 가장 적절한 것은?</div>
   <div class="sgrid wch"><div class="passage fit">In some ways, we are more eager to track down and recover knowledge from the distant past than ever. New storage technologies make it possible to preserve texts, images, and music at minimal cost, and social media have made it simpler to share this stored content more widely than ever before. Never have previously produced cultural artifacts and practices been as readily available to as many people as they are now. Yet, amid this digital abundance of cultural content, older file formats, websites, and entire databases are becoming unreadable at a frightening speed, raising the question of whether we’re really so much better at preserving the past than our ancestors were. And while the technologies of cultural storage and distribution have changed, the laws governing how culture works — how it is preserved, transmitted, exchanged, and recovered — haven’t. The interplay of preservation and destruction, of loss and recovery, of error and adaptation continues unabated in a world that has put almost all human cultures in constant contact.<div class="foot">* cultural artifact: 문화 유물 ** unabated: 약해지지 않는</div></div><div class="choices one rc fit"><div class="c"><b>①</b><span>디지털 콘텐츠의 공유는 문화 정체성을 약화시킨다.</span></div><div class="c"><b>②</b><span>디지털 기술을 통해 콘텐츠 저장 비용을 절감할 수 있다.</span></div><div class="c"><b>③</b><span>디지털 기술이 발전해도 문화 보존과 소실의 문제는 남아 있다.</span></div><div class="c"><b>④</b><span>소셜 미디어는 콘텐츠를 재생산하여 문화 전파를 촉진한다.</span></div><div class="c"><b>⑤</b><span>문화 콘텐츠 보존을 위해 원작자의 권리 강화가 필요하다.</span></div></div></div>
 </section>
 <section class="slide sol">
@@ -575,7 +599,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">23</span><span class="tag">독해</span><span class="tag lite">글의 주제</span></div>
-  <div class="inst">23. 다음 글의 주제로 가장 적절한 것은?</div>
+  <div class="inst">다음 글의 주제로 가장 적절한 것은?</div>
   <div class="sgrid wch"><div class="passage fit">We use space, eye contact, and touch to communicate positive and negative attitudes toward others. These signals can reflect and regulate the intimacy in a relationship. In one interesting application of this idea, researchers found that nonverbal intimacy regulation even occurs when people interact with others via avatars in online environments. As in face-to-face encounters, people typically respond to decreased distances by compensating with reduced gaze. But we should keep in mind what communication scholar Mark Knapp has pointed out: These stereotypical immediacy behaviors — close distances, eye contact, touch, body lean, and so forth — are more evident during the early stages of intimacy than they are during later stages. When people become comfortable with each other, they may become more selective in their use of nonverbal immediacy signals, using them during a personal crisis, after a fight, on special occasions, at particular social gatherings, and the like. They may also adopt other more idiosyncratic ways of showing their affection — a unique gesture or a special touch, for instance — and they may feel less obliged overall to display their affections in public.<div class="foot">* idiosyncratic: 특이한</div></div><div class="choices one rc fit"><div class="c"><b>①</b><span>the role of positive attitudes in overcoming conflicts</span></div><div class="c"><b>②</b><span>the influence of maintaining eye contact in communication</span></div><div class="c"><b>③</b><span>the use of nonverbals to signal the current status of relationships</span></div><div class="c"><b>④</b><span>the effects of physical distance on interpersonal relationships</span></div><div class="c"><b>⑤</b><span>the benefits of online interaction over in-person conversation</span></div></div></div>
 </section>
 <section class="slide sol">
@@ -591,7 +615,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">24</span><span class="tag">독해</span><span class="tag lite">글의 제목</span></div>
-  <div class="inst">24. 다음 글의 제목으로 가장 적절한 것은?</div>
+  <div class="inst">다음 글의 제목으로 가장 적절한 것은?</div>
   <div class="sgrid wch"><div class="passage fit">In many situations, corporate moral decisions do not entail a trade-off: doing the right thing is sometimes good for business. Legal scholar Lucian Bebchuk calls this type of reasoning “instrumental stakeholderism.” Making stakeholders (customers, the community, employees, and so on) happy, even if it costs a little, may be in the interest of shareholders. For Bebchuk, such situations do not pose a challenge to economist Milton Friedman’s view that managers should aim at maximizing profits. Giving an extra week of paid vacation or long maternity leave may help attract the most talented young college graduates. Sourcing inputs responsibly may appeal to millennial consumers who are concerned with the environment. Being more environmentally conscious than what current standards require might give a leading edge if one anticipates that regulations will become tighter in the near term. Morality can be seen in such cases as an instrument for (current and long-term) profits, not necessarily as a goal for its own sake.<div class="foot">* stakeholder: 이해관계자 ** maternity leave: 출산 휴가</div></div><div class="choices one rc fit"><div class="c"><b>①</b><span>Regulating Business for Sustainability and Its Limitations</span></div><div class="c"><b>②</b><span>When Goodness Pays Off: The Strategic Side of Ethics</span></div><div class="c"><b>③</b><span>Why Does Profit Maximization Still Come First?</span></div><div class="c"><b>④</b><span>Handling Conflicts: Personal Values vs. Work Ethics</span></div><div class="c"><b>⑤</b><span>How Trends Are Reshaping Young Consumers’ Behaviors</span></div></div></div>
 </section>
 <section class="slide sol">
@@ -607,7 +631,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">25</span><span class="tag">독해</span><span class="tag lite">도표</span></div>
-  <div class="inst">25. 다음 도표의 내용과 일치하지 않는 것은?</div>
+  <div class="inst">다음 도표의 내용과 일치하지 않는 것은?</div>
   <div class="sgrid chart"><div class="pic"><img src="img/q25.png" alt="25번 도표"></div><div class="passage fit">The graph above shows the percentages of Canadians’ preferred reading formats by age group, based on a survey conducted in 2025. ① In all age groups, Print Books were the most preferred reading format, with the 55-64 age group showing the highest preference at 71%. ② The percentage of people who preferred Ebooks was the highest in the 18-29 age group, followed by the 30-44 age group. ③ While the preference for Ebooks was higher than that for Audiobooks in the 18-29 age group, the opposite was true in both the 30-44 and 45-54 age groups. ④ The percentage of people who answered No Preference was highest in the 30-44 age group at 11%, which was more than twice that of the 45-54 age group. ⑤ In the 55-64 age group, the percentage of people who preferred Audiobooks and the percentage of people who showed No Preference were both lower than that for Ebooks.</div></div>
 </section>
 <section class="slide sol">
@@ -623,7 +647,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">26</span><span class="tag">독해</span><span class="tag lite">내용 불일치</span></div>
-  <div class="inst">26. Otto Loewi에 관한 다음 글의 내용과 일치하지 않는 것은?</div>
+  <div class="inst">Otto Loewi에 관한 다음 글의 내용과 일치하지 않는 것은?</div>
   <div class="sgrid wch"><div class="passage fit">Otto Loewi was a pharmacologist whose discoveries greatly advanced the study of chemical communication between nerve cells. Born in Frankfurt, Germany, in 1873, he originally hoped to study art history. However, following his parents’ advice, Loewi studied medicine at the University of Strasbourg, Germany (now part of France). Although he was qualified as a physician, he chose to switch from a doctor treating patients to a medical researcher seeking cures. In 1902, he first met Henry Dale in Ernest Starling’s laboratory in London, where he spent several months. In 1936, he and Henry Dale shared the Nobel Prize in Physiology or Medicine. After Germany invaded Austria in 1938, Loewi was forced to leave Austria, where he was living at the time. Loewi became a research professor at New York University’s College of Medicine in 1940.<div class="foot">* pharmacologist: 약리학자 ** physiology: 생리학</div></div><div class="choices one rc fit"><div class="c"><b>①</b><span>1873년에 독일에서 태어났다.</span></div><div class="c"><b>②</b><span>부모님의 조언에 따라 미술사를 공부했다.</span></div><div class="c"><b>③</b><span>Ernest Starling의 연구실에서 Henry Dale을 처음 만났다.</span></div><div class="c"><b>④</b><span>Henry Dale과 노벨상을 공동 수상했다.</span></div><div class="c"><b>⑤</b><span>뉴욕대학교 의과 대학의 연구 교수가 되었다.</span></div></div></div>
 </section>
 <section class="slide sol">
@@ -639,7 +663,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">27</span><span class="tag">독해</span><span class="tag lite">안내문</span></div>
-  <div class="inst">27. Ice Hockey Club Recruitment에 관한 다음 안내문의 내용과 일치하지 않는 것은?</div>
+  <div class="inst">Ice Hockey Club Recruitment에 관한 다음 안내문의 내용과 일치하지 않는 것은?</div>
   <div class="sgrid"><div class="notice fit"><div class="nt">Ice Hockey Club Recruitment</div>
 <div class="nh">■ Who We Are Looking For</div><div class="ni">- We are open to all adults.<br>- No prior skating experience is necessary.</div>
 <div class="nh">■ Schedule &amp; Location</div><div class="ni">- Practice is on every Friday, 7:00 p.m. – 10:00 p.m.<br>- Location is at Pinewood Ice Rink.</div>
@@ -658,7 +682,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">28</span><span class="tag">독해</span><span class="tag lite">안내문</span></div>
-  <div class="inst">28. E-Bike City Tour에 관한 다음 안내문의 내용과 일치하는 것은?</div>
+  <div class="inst">E-Bike City Tour에 관한 다음 안내문의 내용과 일치하는 것은?</div>
   <div class="sgrid"><div class="notice fit"><div class="nt">E-Bike City Tour</div><div class="ni" style="text-align:center">Explore the city’s hidden spots on an E-Bike!</div>
 <div class="nh">■ Schedule &amp; Meeting Site</div><div class="ni">- Schedule: Every Saturday at 10 a.m.<br>- Meeting Site: Riverside Park North Entrance</div>
 <div class="nh">■ Program Details</div><div class="ni">- Safety training on braking and signaling (30 mins)<br>- Guided group tour along the city path (1 hour)</div>
@@ -678,7 +702,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">29</span><span class="tag">독해</span><span class="tag lite">어법</span></div>
-  <div class="inst">29. 다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?</div>
+  <div class="inst">다음 글의 밑줄 친 부분 중, 어법상 틀린 것은?</div>
   <div class="passage fit">Deduction makes us feel safe: If and when we know all the elements of the problem situation and how they hang together, then we can ①<u>confidently</u> deduce the outcome. This is rationality at its most unassailable. In professional practice, this type of thinking expresses itself in the belief ②<u>that</u> we can produce “logical” strategies and blueprints, or the claim to base ourselves on “best practices” and “evidence-based interventions.” But this gold standard of pure logic can only be achieved in a closed world, ③<u>which</u> we are absolutely sure we know <i>all</i> the elements of the problem situation and <i>completely</i> understand all the relationships at play beforehand. In the real world, this never happens — and when it ④<u>does</u>, we are talking about quite uninteresting, mechanical, routine reasoning. In practice, all problems are messy. Yet it is tempting ⑤<u>to claim</u> that we have used deduction in dealing with a problem; this claim to pure rationality is so strong that we don’t even have to defend the result. It is “logical,” after all.<div class="foot">* deduction: 연역 ** unassailable: 논쟁의 여지가 없는</div></div>
 </section>
 <section class="slide sol">
@@ -694,7 +718,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">30</span><span class="tag">독해</span><span class="tag lite">어휘</span><span class="tag pt">3점</span></div>
-  <div class="inst">30. 다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?</div>
+  <div class="inst">다음 글의 밑줄 친 부분 중, 문맥상 낱말의 쓰임이 적절하지 않은 것은?</div>
   <div class="passage fit">At the base of the status hierarchy among performers are cover bands, which are often accorded little critical artistic weight. Reliance on someone else’s material concedes that you have nothing of your own to say. However, playing covers ①<u>fulfills</u> aesthetic, educational and economic roles. Some covers take the original recording as a starting point and modify or reinvent it creatively. Bands starting out rely on cover versions for a large part of their repertoire out of necessity, ②<u>mastering</u> them as part of a learning process. Even ‘original’ performers will usually play a few covers. The distinction between ‘cover’ and ‘original’ is ③<u>absent</u>, since upward career mobility is directly tied to notions of originality. Learning such songs is part of the apprenticeship process in acquiring musicianship through ④<u>engaging</u> with a musical tradition. An example is the development of ‘rock’ in England in the 1960s through local bands covering imported copies of American rhythm and blues hits. Cover songs are literally music to the ears of the managers of pubs and the like, as they are tapping into a ⑤<u>proven</u> product that the audience can identify with. For each new generation of listeners, a ‘good’ song is a good song.<div class="foot">* accord: 부여하다 ** concede: 인정하다 *** apprenticeship: 수습 기간</div></div>
 </section>
 <section class="slide sol">
@@ -774,7 +798,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">35</span><span class="tag">독해</span><span class="tag lite">무관한 문장</span></div>
-  <div class="inst">35. 다음 글에서 전체 흐름과 관계 없는 문장은?</div>
+  <div class="inst">다음 글에서 전체 흐름과 관계 없는 문장은?</div>
   <div class="passage fit">Research with patients with damage to the hippocampus has indicated that conscious memory of events and motor learning are separate neurological systems. ①A patient with hippocampal damage can learn a motor task and get better with practice, but each time he practices he will have no conscious memory of doing the task. ②The motor circuits become trained, but damage to the hippocampus prevents the formation of new conscious memories. ③Therefore, the motor circuits learn a new task, such as solving a simple mechanical puzzle, but the person does not remember seeing or doing the puzzle. ④This suggests that repetitive practice with the puzzle can help stimulate undamaged brain tissues to recover lost cognitive functions, thereby offering a therapeutic solution for hippocampal damage. ⑤With repeated practice, the person gets better and better at it, but each time the puzzle is presented, he says he has never seen it before.<div class="foot">* hippocampus: 해마</div></div>
 </section>
 <section class="slide sol">
@@ -860,7 +884,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">40</span><span class="tag">독해</span><span class="tag lite">요약문</span><span class="tag pt">3점</span></div>
-  <div class="inst">40. 다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?</div>
+  <div class="inst">다음 글의 내용을 한 문장으로 요약하고자 한다. 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?</div>
   <div class="sgrid"><div class="passage fit">Social norms are so pervasive and so deeply embedded in our performative muscle memory that we typically engage in them without even thinking. When someone greets us and asks, “How are you?,” we tend to respond automatically with something along the lines of “I’m OK” or “Not bad.” The response is hardly ever “You know, I’m having a pretty awful day, and I’m really worried because there is talk of layoffs happening at my job,” even though that may be the case. This degree of transparency upon greeting someone is typically perceived as socially awkward. The list of social norms within a given community or society is ever growing and ever changing as community members negotiate what is acceptable behavior based on the standing beliefs and ideologies of the collective. During this process, new rules are constructed and enforced to establish expectations for community members. Social norms could easily be reduced to practicing “good behavior,” but it’s much more than that. Social norms are the means by which social cohesion is achieved. And we navigate these rules, and thousands more like them, every single day.<div class="foot">* pervasive: 만연한 ** transparency: 투명함 *** cohesion: 결합</div></div>
   <div class="rcol"><div class="sumbox"><div class="arrow">⇩</div>While social norms are often practiced <span class="sbl">(A)</span> in daily interactions, these negotiated rules act as a mechanism that ultimately <span class="sbl">(B)</span> social ties.</div>
   <div class="choices one ab"><div class="c hd"><b></b><span>(A) ········· (B)</span></div><div class="c"><b>①</b><span>unconsciously ······· strengthens</span></div><div class="c"><b>②</b><span>unconsciously ······· disrupts</span></div><div class="c"><b>③</b><span>habitually ······· challenges</span></div><div class="c"><b>④</b><span>reluctantly ······· assesses</span></div><div class="c"><b>⑤</b><span>reluctantly ······· reinforces</span></div></div></div></div>
@@ -878,7 +902,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">41</span><span class="tag">독해</span><span class="tag lite">제목</span></div>
-  <div class="grp">[41 ~ 42] 다음 글을 읽고, 물음에 답하시오.</div><div class="inst">41. 윗글의 제목으로 가장 적절한 것은?</div>
+  <div class="grp">[41 ~ 42] 다음 글을 읽고, 물음에 답하시오.</div><div class="inst">윗글의 제목으로 가장 적절한 것은?</div>
   <div class="passage fit two">Music allows several individuals to produce sounds together. Notably, only humans can synchronize their movements (including vocalizations) flexibly in a group to an external pulse. This ability is possibly the simplest cognitive function that just (a)<u>separates</u> us from animals, which would make music the decisive evolutionary step of the <i>Homo sapiens</i>. Animals have “song” and “drumming”, but gorillas do not drum in synchrony, and whales do not sing in unison. Making music together in a group, that is, joint synchronized action, is a powerful elicitor of social bonding. Comparable to Robin Dunbar’s <i>vocal grooming hypothesis</i>, music might have (b)<u>replaced</u> manual grooming as the main mechanism for social bonding during human evolution. Dunbar’s hypothesis is based on the observation that, similar to manual grooming, human language plays a key role in building and maintaining affiliative bonds and group cohesion. This process is supposedly driven by increased group size, which (c)<u>increases</u> the number of social relationships an individual needs to maintain and monitor. Once the number of relationships becomes too large, an individual can no longer maintain its social networks with tactile interactions alone, and selection will (d)<u>reject</u> alternative mechanisms such as talking to several individuals at the same time. However, many more individuals can make music in a group, and thus establish and foster social relationships. This makes music the (e)<u>more obvious</u> candidate to maintain social networks, and increase social cohesion in large groups. Thus a <i>musical grooming hypothesis</i> seems at least as likely to explain the emergence of music as a vocal grooming hypothesis for the emergence of language.<div class="foot">* unison: 제창 ** elicitor: 유발 요인 *** tactile: 촉각의</div></div><div class="choices"><div class="c"><b>①</b><span>Integrating Music into Language Learning</span></div><div class="c"><b>②</b><span>Why Humans Evolved to Live in Large Groups</span></div><div class="c"><b>③</b><span>How Animals Build Social Bonds Without Language</span></div><div class="c"><b>④</b><span>Messages in Melody: Limits in Delivering Intentions</span></div><div class="c"><b>⑤</b><span>Making Music Collectively: What Binds Humans Together</span></div></div>
 </section>
 <section class="slide sol">
@@ -894,7 +918,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">42</span><span class="tag">독해</span><span class="tag lite">어휘</span></div>
-  <div class="grp">[41 ~ 42] 다음 글을 읽고, 물음에 답하시오.</div><div class="inst">42. 밑줄 친 (a)~(e) 중에서 문맥상 낱말의 쓰임이 적절하지 않은 것은?</div>
+  <div class="grp">[41 ~ 42] 다음 글을 읽고, 물음에 답하시오.</div><div class="inst">밑줄 친 (a)~(e) 중에서 문맥상 낱말의 쓰임이 적절하지 않은 것은?</div>
   <div class="passage fit two">Music allows several individuals to produce sounds together. Notably, only humans can synchronize their movements (including vocalizations) flexibly in a group to an external pulse. This ability is possibly the simplest cognitive function that just (a)<u>separates</u> us from animals, which would make music the decisive evolutionary step of the <i>Homo sapiens</i>. Animals have “song” and “drumming”, but gorillas do not drum in synchrony, and whales do not sing in unison. Making music together in a group, that is, joint synchronized action, is a powerful elicitor of social bonding. Comparable to Robin Dunbar’s <i>vocal grooming hypothesis</i>, music might have (b)<u>replaced</u> manual grooming as the main mechanism for social bonding during human evolution. Dunbar’s hypothesis is based on the observation that, similar to manual grooming, human language plays a key role in building and maintaining affiliative bonds and group cohesion. This process is supposedly driven by increased group size, which (c)<u>increases</u> the number of social relationships an individual needs to maintain and monitor. Once the number of relationships becomes too large, an individual can no longer maintain its social networks with tactile interactions alone, and selection will (d)<u>reject</u> alternative mechanisms such as talking to several individuals at the same time. However, many more individuals can make music in a group, and thus establish and foster social relationships. This makes music the (e)<u>more obvious</u> candidate to maintain social networks, and increase social cohesion in large groups. Thus a <i>musical grooming hypothesis</i> seems at least as likely to explain the emergence of music as a vocal grooming hypothesis for the emergence of language.<div class="foot">* unison: 제창 ** elicitor: 유발 요인 *** tactile: 촉각의</div></div><div class="choices row5"><div class="c"><b>①</b><span>(a)</span></div><div class="c"><b>②</b><span>(b)</span></div><div class="c"><b>③</b><span>(c)</span></div><div class="c"><b>④</b><span>(d)</span></div><div class="c"><b>⑤</b><span>(e)</span></div></div>
 </section>
 <section class="slide sol">
@@ -910,7 +934,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">43</span><span class="tag">독해</span><span class="tag lite">순서</span></div>
-  <div class="grp">[43 ~ 45] 다음 글을 읽고, 물음에 답하시오.</div><div class="inst">43. 주어진 글 (A)에 이어질 내용을 순서에 맞게 배열한 것으로 가장 적절한 것은?</div>
+  <div class="grp">[43 ~ 45] 다음 글을 읽고, 물음에 답하시오.</div><div class="inst">주어진 글 (A)에 이어질 내용을 순서에 맞게 배열한 것으로 가장 적절한 것은?</div>
   <div class="passage fit two"><p><b class="pl2">(A)</b><br>Martin was an experienced woodworker in a small town. His assistant Tom loved creating delicate designs. Tom always carried a sketchbook filled with design ideas. One day, a librarian ordered a bookcase for children. Martin confidently started to build a bookcase with thick oak boards. Tom suggested adding a few decorative touches and showed (a)<u>him</u> his sketches. But Martin just said, “If it can hold books safely, it has done its job.”</p><p><b class="pl2">(B)</b><br>Seeing his frustration, Tom quietly showed his sketches once more. “Maybe the color isn’t the problem,” Tom said. “Perhaps a few small details could make a difference.” Martin looked at the sketches. Not having a better idea, (b)<u>he</u> allowed Tom to add some details. Tom picked up his brushes and painted flowers on both sides of the bookcase. At first, Martin had his doubts, but over time the bookcase came to look better. When the workshop grew dark, Martin quietly placed a lamp beside Tom so that (c)<u>he</u> could continue working. His work was finished late that night.</p><p><b class="pl2">(C)</b><br>Several days later, the librarian stopped by to see how the bookcase was coming along. Martin expected praise. Instead, the librarian said, “This bookcase is certainly strong and well-made, but it doesn’t look like it belongs in a children’s library. I wish it looked more playful.” To solve the issue, Martin painted the bookcase yellow. However, it still looked too plain, and (d)<u>he</u> had to admit that he had no idea what else to do.</p><p><b class="pl2">(D)</b><br>The next morning, the librarian smiled when she saw the bookcase. “This is exactly what we hoped for,” she said. “The kids are going to love it when they see it.” After the librarian left, Martin apologized to Tom. “I was so proud of my work that I forgot the importance of details,” he admitted. Martin picked up Tom’s sketchbook and turned the pages. Together, they decided to use one of the sketches for their next project. Tom was happy that Martin finally came to see the value of the details (e)<u>he</u> had once ignored.</p></div><div class="choices"><div class="c"><b>①</b><span>(B) - (D) - (C)</span></div><div class="c"><b>②</b><span>(C) - (B) - (D)</span></div><div class="c"><b>③</b><span>(C) - (D) - (B)</span></div><div class="c"><b>④</b><span>(D) - (B) - (C)</span></div><div class="c"><b>⑤</b><span>(D) - (C) - (B)</span></div></div>
 </section>
 <section class="slide sol">
@@ -926,7 +950,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">44</span><span class="tag">독해</span><span class="tag lite">지칭</span></div>
-  <div class="grp">[43 ~ 45] 다음 글을 읽고, 물음에 답하시오.</div><div class="inst">44. 밑줄 친 (a)~(e) 중에서 가리키는 대상이 나머지 넷과 다른 것은?</div>
+  <div class="grp">[43 ~ 45] 다음 글을 읽고, 물음에 답하시오.</div><div class="inst">밑줄 친 (a)~(e) 중에서 가리키는 대상이 나머지 넷과 다른 것은?</div>
   <div class="passage fit two"><p><b class="pl2">(A)</b><br>Martin was an experienced woodworker in a small town. His assistant Tom loved creating delicate designs. Tom always carried a sketchbook filled with design ideas. One day, a librarian ordered a bookcase for children. Martin confidently started to build a bookcase with thick oak boards. Tom suggested adding a few decorative touches and showed (a)<u>him</u> his sketches. But Martin just said, “If it can hold books safely, it has done its job.”</p><p><b class="pl2">(B)</b><br>Seeing his frustration, Tom quietly showed his sketches once more. “Maybe the color isn’t the problem,” Tom said. “Perhaps a few small details could make a difference.” Martin looked at the sketches. Not having a better idea, (b)<u>he</u> allowed Tom to add some details. Tom picked up his brushes and painted flowers on both sides of the bookcase. At first, Martin had his doubts, but over time the bookcase came to look better. When the workshop grew dark, Martin quietly placed a lamp beside Tom so that (c)<u>he</u> could continue working. His work was finished late that night.</p><p><b class="pl2">(C)</b><br>Several days later, the librarian stopped by to see how the bookcase was coming along. Martin expected praise. Instead, the librarian said, “This bookcase is certainly strong and well-made, but it doesn’t look like it belongs in a children’s library. I wish it looked more playful.” To solve the issue, Martin painted the bookcase yellow. However, it still looked too plain, and (d)<u>he</u> had to admit that he had no idea what else to do.</p><p><b class="pl2">(D)</b><br>The next morning, the librarian smiled when she saw the bookcase. “This is exactly what we hoped for,” she said. “The kids are going to love it when they see it.” After the librarian left, Martin apologized to Tom. “I was so proud of my work that I forgot the importance of details,” he admitted. Martin picked up Tom’s sketchbook and turned the pages. Together, they decided to use one of the sketches for their next project. Tom was happy that Martin finally came to see the value of the details (e)<u>he</u> had once ignored.</p></div><div class="choices row5"><div class="c"><b>①</b><span>(a)</span></div><div class="c"><b>②</b><span>(b)</span></div><div class="c"><b>③</b><span>(c)</span></div><div class="c"><b>④</b><span>(d)</span></div><div class="c"><b>⑤</b><span>(e)</span></div></div>
 </section>
 <section class="slide sol">
@@ -942,7 +966,7 @@ mark{background:linear-gradient(transparent 35%,var(--mark) 35%);color:inherit;p
 </section>
 <section class="slide">
   <div class="qhead"><span class="qnum">45</span><span class="tag">독해</span><span class="tag lite">내용 불일치</span></div>
-  <div class="grp">[43 ~ 45] 다음 글을 읽고, 물음에 답하시오.</div><div class="inst">45. 윗글에 관한 내용으로 적절하지 않은 것은?</div>
+  <div class="grp">[43 ~ 45] 다음 글을 읽고, 물음에 답하시오.</div><div class="inst">윗글에 관한 내용으로 적절하지 않은 것은?</div>
   <div class="passage fit two"><p><b class="pl2">(A)</b><br>Martin was an experienced woodworker in a small town. His assistant Tom loved creating delicate designs. Tom always carried a sketchbook filled with design ideas. One day, a librarian ordered a bookcase for children. Martin confidently started to build a bookcase with thick oak boards. Tom suggested adding a few decorative touches and showed (a)<u>him</u> his sketches. But Martin just said, “If it can hold books safely, it has done its job.”</p><p><b class="pl2">(B)</b><br>Seeing his frustration, Tom quietly showed his sketches once more. “Maybe the color isn’t the problem,” Tom said. “Perhaps a few small details could make a difference.” Martin looked at the sketches. Not having a better idea, (b)<u>he</u> allowed Tom to add some details. Tom picked up his brushes and painted flowers on both sides of the bookcase. At first, Martin had his doubts, but over time the bookcase came to look better. When the workshop grew dark, Martin quietly placed a lamp beside Tom so that (c)<u>he</u> could continue working. His work was finished late that night.</p><p><b class="pl2">(C)</b><br>Several days later, the librarian stopped by to see how the bookcase was coming along. Martin expected praise. Instead, the librarian said, “This bookcase is certainly strong and well-made, but it doesn’t look like it belongs in a children’s library. I wish it looked more playful.” To solve the issue, Martin painted the bookcase yellow. However, it still looked too plain, and (d)<u>he</u> had to admit that he had no idea what else to do.</p><p><b class="pl2">(D)</b><br>The next morning, the librarian smiled when she saw the bookcase. “This is exactly what we hoped for,” she said. “The kids are going to love it when they see it.” After the librarian left, Martin apologized to Tom. “I was so proud of my work that I forgot the importance of details,” he admitted. Martin picked up Tom’s sketchbook and turned the pages. Together, they decided to use one of the sketches for their next project. Tom was happy that Martin finally came to see the value of the details (e)<u>he</u> had once ignored.</p></div><div class="choices"><div class="c"><b>①</b><span>사서는 아이들을 위한 책장을 주문했다.</span></div><div class="c"><b>②</b><span>Tom은 책장 양쪽 측면에 꽃을 그렸다.</span></div><div class="c"><b>③</b><span>Tom은 다음 날 아침에 작업을 끝냈다.</span></div><div class="c"><b>④</b><span>Martin은 책장을 노란색으로 칠했다.</span></div><div class="c"><b>⑤</b><span>사서가 떠난 후 Martin은 Tom에게 사과했다.</span></div></div>
 </section>
 <section class="slide sol">
